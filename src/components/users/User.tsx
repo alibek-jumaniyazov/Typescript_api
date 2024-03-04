@@ -1,3 +1,5 @@
+import UserInfo from "./UserInfo";
+
 export type TApi = {
     id: number;
     name: string;
@@ -13,18 +15,9 @@ export default function User({ item }: Props) {
     return (
         <div className="w-1/6 p-5 shadow-lg cursor-pointer flex flex-col justify-center items-center gap-3 rounded-md">
             <div className="">{item.id}</div>
-            <div className="flex justify-center items-center gap-2">
-                <span className="font-bold">User Name: </span>
-                <p className="text-gray-500">{item.username}</p>
-            </div>
-            <div className="flex">
-                <span className="font-bold">User Phone: </span>
-                <p className="text-gray-500">{item.phone}</p>
-            </div>
-            <div className="flex">
-                <span className="font-bold">User Email: </span>
-                <p className="text-gray-500">{item.email}</p>
-            </div>
+            <UserInfo key='User Name' value={item.username}/>
+            <UserInfo key='User Phone'  value={item.phone}/>
+            <UserInfo key='User Email' value={item.email}/>
         </div>
     );
 }
